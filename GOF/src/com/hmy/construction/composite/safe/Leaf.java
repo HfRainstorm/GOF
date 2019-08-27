@@ -3,7 +3,7 @@ package com.hmy.construction.composite.safe;
 /**
  * @description:
  * 叶子节点，无法进行添加和删除操作
- *      透明式的组合模式：叶子节点中的添加和删除操作用不到，但是必须要有
+ *      安全式的组合模式：叶子节点中的添加和删除操作用不到，我选择了删除
  */
 public class Leaf extends Component {
 

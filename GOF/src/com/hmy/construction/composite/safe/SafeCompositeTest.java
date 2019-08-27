@@ -2,7 +2,7 @@ package com.hmy.construction.composite.safe;
 
 public class SafeCompositeTest {
 
-    // 透明式的组合模式
+    // 安全式的组合模式：需要指明是叶子还是树干
     public static void main(String[] args) {
         Component root = new Composite();
 

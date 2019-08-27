@@ -2,7 +2,7 @@ package com.hmy.construction.composite.transparency;
 
 public class TransparencyCompositeTest {
 
-    // 透明式的组合模式
+    // 透明式的组合模式：new 的时候不需要区分是叶子还是树干
     public static void main(String[] args) {
         Component root = new Composite();
 
