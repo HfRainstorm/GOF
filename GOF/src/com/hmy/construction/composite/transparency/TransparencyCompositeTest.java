@@ -9,11 +9,11 @@ public class TransparencyCompositeTest {
         Component computerCase = new Composite("机箱", 500);
 
         Component mainBoard = new Composite("主板",1000);
-        // 显卡和cpu不可再分，所以创建为叶子节点
+        // 不管是不是叶子，都统一使用树干创建
         Component gpu = new Composite("显卡",2000);
         Component cpu = new Composite("cpu",1200);
 
-        // 键盘和显示屏不可再分，所以创建为叶子节点
+        // 不管是不是叶子，都统一使用树干创建
         Component keyboard = new Composite("键盘", 200);
         Component screen = new Composite("显示屏", 400);
 
