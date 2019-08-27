@@ -1,0 +1,5 @@
+
+安全式的组合模式：
+    叶子节点，没有添加和删除操作
+
+    用户创建时，需要指明是Leaf(叶子节点)【new Leaf()】、还是Composite(树干)【new Composite()】
