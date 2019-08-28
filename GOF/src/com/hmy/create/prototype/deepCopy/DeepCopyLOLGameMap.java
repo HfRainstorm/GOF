@@ -38,22 +38,38 @@ public class DeepCopyLOLGameMap implements Serializable {
     // 串行化方式进行深拷贝
     public DeepCopyLOLGameMap clone() {
         DeepCopyLOLGameMap clone = null;
+
+        ObjectOutputStream oos = null;
+        ObjectInputStream ois = null;
         try {
             //写入当前对象的二进制流
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos = new ObjectOutputStream(baos);
             oos.writeObject(this);
 
             //读出二进制流产生新的对象
             ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-            ObjectInputStream ois = new ObjectInputStream(bais);
+            ois = new ObjectInputStream(bais);
 
             clone = (DeepCopyLOLGameMap)ois.readObject();
-        } catch (IOException e) {
+
+
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            try {
+                // 关闭流
+                assert oos != null;
+                oos.close();
+
+                assert ois != null;
+                ois.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
         return clone;
     }
 
